@@ -29,20 +29,63 @@ while True:
 
     if choice == '1':
         # https://www.w3schools.com/python/python_lists_access.asp
+        number = input("What number you want to see?: ")
+        apart_number = int(number) - 1
+        print(apartments[apart_number])
         pass
     elif choice == '2':
         # https://www.w3schools.com/python/python_lists_sort.asp
+        
+        
+        
+        def sort_price(apartment):
+            return int(apartment[8])
+        apartments.sort(key=sort_price, reverse = True)
+        print(apartments[:10])
+
         pass
     elif choice == '3':
         # https://www.w3schools.com/python/python_lists_sort.asp
+        def sort_price(apartment):
+            return int(apartment[8])
+        apartments.sort(key=sort_price)
+        print(apartments[:10])
+
         pass
     elif choice == '4':
         # https://www.w3schools.com/python/python_lists_comprehension.asp
         # https://www.w3schools.com/python/python_lists_access.asp - Range of Indexes
+      
+        
+        
+        price = input("What price is?: ")
+        
+
+        top20cheaper = []
+
+        for aparment in apartments:
+            if int(aparment[-1]) <= int(price):
+                top20cheaper.append(aparment)
+
+        print(top20cheaper[:20])
+        
+
+
         pass
     elif choice == '5':
         # https://www.w3schools.com/python/python_lists_comprehension.asp
         # https://www.w3schools.com/python/python_lists_access.asp - Range of Indexes
+        price = input("What price is?: ")
+        
+
+        top20expensive = []
+
+        for aparment in apartments:
+            if int(aparment[-1]) >= int(price):
+                top20expensive.append(aparment)
+
+        print(top20expensive[:20])
+
         pass
 
     elif choice == '6':
